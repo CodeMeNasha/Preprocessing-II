@@ -1,13 +1,20 @@
 // Mixins in here
 
-.custom-buttons(justify, color) {
 
-    justify-content: justify;
-    background-color: color;
+.the-buttons(@b, @c) {
+    display: flex;
+    border-radius: @b;
+    background-color: @c;
 }
 
 .btn {
-    custom-buttons: (center, red);
-}
+    .the-buttons(20px, rgb(198, 50, 218));
+    color: white;
 
+        &:hover {
+            background-color: pink;
+            border-radius: 30px;
+            color: black;
+        }
+}
 
